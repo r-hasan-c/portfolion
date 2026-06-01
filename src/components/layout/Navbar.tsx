@@ -29,12 +29,16 @@ export default function Navbar() {
 
   useEffect(() => { setMenuOpen(false); }, [pathname]);
 
-  // Close menu when user starts scrolling
+  // Close menu when user scrolls or touch-scrolls
   useEffect(() => {
     if (!menuOpen) return;
     const close = () => setMenuOpen(false);
-    window.addEventListener("scroll", close, { passive: true });
-    return () => window.removeEventListener("scroll", close);
+    window.addEventListener("scroll",    close, { passive: true });
+    window.addEventListener("touchmove", close, { passive: true });
+    return () => {
+      window.removeEventListener("scroll",    close);
+      window.removeEventListener("touchmove", close);
+    };
   }, [menuOpen]);
 
   const isActive = (href: string) =>
@@ -108,38 +112,45 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -6 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.2 }}
-            className="fixed top-[var(--nav-h)] inset-x-0 z-40 bg-[#0D1424] border-b border-[#1E2A3D] shadow-2xl md:hidden"
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            className="fixed top-[var(--nav-h)] inset-x-0 z-40 md:hidden"
+            style={{
+              background: "rgba(11, 18, 40, 0.82)",
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
+              borderBottom: "1px solid rgba(255,255,255,0.07)",
+            }}
           >
-            <nav className="page-container py-2 flex flex-col">
+            <nav className="page-container py-3 flex flex-col">
               {NAV_LINKS.map(({ href, label }, i) => {
                 const active = isActive(href);
                 return (
                   <motion.div
                     key={href}
-                    initial={{ opacity: 0, x: -10 }}
+                    initial={{ opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.04, duration: 0.18 }}
+                    transition={{ delay: i * 0.045, duration: 0.18, ease: "easeOut" }}
                   >
                     <Link
                       href={href}
-                      style={{ textDecoration: "none" }}
-                      className={`flex items-center justify-between py-3.5 border-b border-white/[0.06] transition-colors duration-150 ${
-                        active
-                          ? "text-[#22D3EE]"
-                          : "text-[#E2E8F0] hover:text-[#22D3EE]"
+                      className={`flex items-center justify-between py-4 transition-colors duration-150 ${
+                        active ? "text-[#22D3EE]" : "text-white/80 hover:text-white"
                       }`}
+                      style={{
+                        textDecoration: "none",
+                        borderBottom: "1px solid rgba(255,255,255,0.06)",
+                      }}
                     >
-                      <span className={`text-[0.95rem] font-medium ${active ? "font-semibold" : ""}`}>
+                      <span className={`text-[1rem] tracking-wide ${active ? "font-semibold" : "font-normal"}`}>
                         {label}
                       </span>
                       <ChevronRight
-                        size={15}
-                        strokeWidth={2}
-                        className={active ? "text-[#22D3EE]" : "text-white/25"}
+                        size={16}
+                        strokeWidth={1.5}
+                        style={{ opacity: active ? 1 : 0.3, color: active ? "#22D3EE" : "white" }}
                       />
                     </Link>
                   </motion.div>
