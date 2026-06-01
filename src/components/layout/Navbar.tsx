@@ -29,16 +29,28 @@ export default function Navbar() {
 
   useEffect(() => { setMenuOpen(false); }, [pathname]);
 
-  // Close menu the instant the user scrolls or swipes — capture phase so
-  // nothing in the tree can block it, and passive so scroll isn't delayed.
+  // Close on scroll/swipe AND on any tap outside the menu
   useEffect(() => {
     if (!menuOpen) return;
     const close = () => setMenuOpen(false);
+
+    // Scroll / swipe closes immediately
     document.addEventListener("scroll",    close, { passive: true, capture: true });
     document.addEventListener("touchmove", close, { passive: true, capture: true });
+
+    // Any click/tap outside closes after a tiny delay
+    // (delay avoids catching the button click that opened the menu)
+    const timer = setTimeout(() => {
+      document.addEventListener("click",    close);
+      document.addEventListener("touchend", close, { passive: true });
+    }, 50);
+
     return () => {
+      clearTimeout(timer);
       document.removeEventListener("scroll",    close, { capture: true });
       document.removeEventListener("touchmove", close, { capture: true });
+      document.removeEventListener("click",    close);
+      document.removeEventListener("touchend", close);
     };
   }, [menuOpen]);
 
@@ -100,7 +112,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            onClick={() => setMenuOpen(v => !v)}
+            onClick={(e) => { e.stopPropagation(); setMenuOpen(v => !v); }}
             className="md:hidden text-xs font-medium tracking-wide text-[#E2E8F0] hover:text-[#22D3EE] transition-colors px-2 py-1.5 rounded border border-[#E2E8F0]/20 hover:border-[#22D3EE]"
             aria-label="Toggle menu"
           >
