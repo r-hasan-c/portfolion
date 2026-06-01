@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronRight } from "lucide-react";
 
 const NAV_LINKS = [
   { href: "/",             label: "About" },
@@ -27,6 +28,14 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => { setMenuOpen(false); }, [pathname]);
+
+  // Close menu when user starts scrolling
+  useEffect(() => {
+    if (!menuOpen) return;
+    const close = () => setMenuOpen(false);
+    window.addEventListener("scroll", close, { passive: true });
+    return () => window.removeEventListener("scroll", close);
+  }, [menuOpen]);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -99,28 +108,41 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }}
+            initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.18 }}
-            className="fixed top-[var(--nav-h)] inset-x-0 z-40 bg-[#0D1424] border-b border-[#1E2A3D] shadow-xl md:hidden"
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.2 }}
+            className="fixed top-[var(--nav-h)] inset-x-0 z-40 bg-[#0D1424] border-b border-[#1E2A3D] shadow-2xl md:hidden"
           >
-            <nav className="page-container py-4 grid grid-cols-2 gap-1.5">
-              {NAV_LINKS.map(({ href, label }) => {
+            <nav className="page-container py-2 flex flex-col">
+              {NAV_LINKS.map(({ href, label }, i) => {
                 const active = isActive(href);
                 return (
-                  <Link
+                  <motion.div
                     key={href}
-                    href={href}
-                    style={{ textDecoration: "none" }}
-                    className={`text-sm px-3 py-2 rounded-lg transition-all font-medium text-center ${
-                      active
-                        ? "bg-[rgba(6,182,212,0.13)] text-[#06B6D4] ring-1 ring-[rgba(6,182,212,0.25)]"
-                        : "text-[#E2E8F0] hover:text-[#22D3EE] hover:bg-[rgba(34,211,238,0.08)] border border-white/15"
-                    }`}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.04, duration: 0.18 }}
                   >
-                    {label}
-                  </Link>
+                    <Link
+                      href={href}
+                      style={{ textDecoration: "none" }}
+                      className={`flex items-center justify-between py-3.5 border-b border-white/[0.06] transition-colors duration-150 ${
+                        active
+                          ? "text-[#22D3EE]"
+                          : "text-[#E2E8F0] hover:text-[#22D3EE]"
+                      }`}
+                    >
+                      <span className={`text-[0.95rem] font-medium ${active ? "font-semibold" : ""}`}>
+                        {label}
+                      </span>
+                      <ChevronRight
+                        size={15}
+                        strokeWidth={2}
+                        className={active ? "text-[#22D3EE]" : "text-white/25"}
+                      />
+                    </Link>
+                  </motion.div>
                 );
               })}
             </nav>
