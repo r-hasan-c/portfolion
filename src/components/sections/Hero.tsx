@@ -73,7 +73,7 @@ export default function Hero() {
 
       <section
         id="about"
-        className="pb-16 subpage-header"
+        className="min-h-[100svh] md:min-h-0 pb-16 subpage-header"
         style={{ paddingTop: "calc(var(--nav-h) + 3.5rem)" }}
       >
         <div className="page-container">
@@ -165,9 +165,12 @@ export default function Hero() {
             >
               {/* Avatar */}
               <div
-                className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border border-white hover:border-[#4d7dd4] transition-all duration-300 hover:shadow-[0_0_14px_rgba(77,125,212,0.45)] cursor-pointer"
+                className="relative w-36 h-36 md:w-32 md:h-32 rounded-full overflow-hidden border border-white hover:border-[#4d7dd4] transition-all duration-300 hover:shadow-[0_0_14px_rgba(77,125,212,0.45)] cursor-pointer"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
+                onTouchStart={handleMouseEnter}
+                onTouchEnd={handleMouseLeave}
+                onTouchCancel={handleMouseLeave}
               >
                 <img
                   src="/images/Me.png"
@@ -183,7 +186,7 @@ export default function Hero() {
               </div>
 
               {/* Social icons: Google Scholar · LinkedIn · GitHub · X */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-6 md:gap-4">
                 <a
                   href={SITE_CONFIG.googleScholar}
                   target="_blank" rel="noopener noreferrer"
@@ -191,7 +194,7 @@ export default function Hero() {
                   style={{ textDecoration: "none" }}
                   title="Google Scholar"
                 >
-                  <GoogleScholarIcon className="w-4 h-4" />
+                  <GoogleScholarIcon className="w-6 h-6 md:w-4 md:h-4" />
                 </a>
                 <a
                   href={SITE_CONFIG.linkedin}
@@ -200,7 +203,7 @@ export default function Hero() {
                   style={{ textDecoration: "none" }}
                   title="LinkedIn"
                 >
-                  <LinkedinIcon className="w-4 h-4" />
+                  <LinkedinIcon className="w-6 h-6 md:w-4 md:h-4" />
                 </a>
                 <a
                   href={SITE_CONFIG.github}
@@ -209,7 +212,7 @@ export default function Hero() {
                   style={{ textDecoration: "none" }}
                   title="GitHub"
                 >
-                  <GithubIcon className="w-4 h-4" />
+                  <GithubIcon className="w-6 h-6 md:w-4 md:h-4" />
                 </a>
                 <a
                   href={SITE_CONFIG.twitter}
@@ -218,7 +221,7 @@ export default function Hero() {
                   style={{ textDecoration: "none" }}
                   title="X (Twitter)"
                 >
-                  <XIcon className="w-4 h-4" />
+                  <XIcon className="w-6 h-6 md:w-4 md:h-4" />
                 </a>
               </div>
             </motion.div>
