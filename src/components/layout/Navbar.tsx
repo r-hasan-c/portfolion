@@ -108,49 +108,67 @@ export default function Navbar() {
         </div>
       </header>
 
+      {/* Backdrop — full screen, closes menu on any touch or scroll */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            key="backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            className="fixed inset-0 z-30 md:hidden"
+            onTouchStart={() => setMenuOpen(false)}
+            onTouchMove={() => setMenuOpen(false)}
+            onClick={() => setMenuOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+
       {/* Mobile drawer */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
+            key="drawer"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
             className="fixed top-[var(--nav-h)] inset-x-0 z-40 md:hidden"
             style={{
-              background: "rgba(11, 18, 40, 0.82)",
-              backdropFilter: "blur(16px)",
-              WebkitBackdropFilter: "blur(16px)",
-              borderBottom: "1px solid rgba(255,255,255,0.07)",
+              background: "rgba(11, 18, 40, 0.92)",
+              backdropFilter: "blur(18px)",
+              WebkitBackdropFilter: "blur(18px)",
+              borderBottom: "1px solid rgba(255,255,255,0.08)",
             }}
           >
-            <nav className="page-container py-3 flex flex-col">
+            <nav className="flex flex-col px-6 py-2">
               {NAV_LINKS.map(({ href, label }, i) => {
                 const active = isActive(href);
                 return (
                   <motion.div
                     key={href}
-                    initial={{ opacity: 0, x: -12 }}
+                    initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.045, duration: 0.18, ease: "easeOut" }}
+                    transition={{ delay: i * 0.04, duration: 0.16, ease: "easeOut" }}
                   >
                     <Link
                       href={href}
                       className={`flex items-center justify-between py-4 transition-colors duration-150 ${
-                        active ? "text-[#22D3EE]" : "text-white/80 hover:text-white"
+                        active ? "text-[#22D3EE]" : "text-white/75 hover:text-white"
                       }`}
                       style={{
                         textDecoration: "none",
                         borderBottom: "1px solid rgba(255,255,255,0.06)",
                       }}
                     >
-                      <span className={`text-[1rem] tracking-wide ${active ? "font-semibold" : "font-normal"}`}>
+                      <span className={`text-[1rem] ${active ? "font-semibold" : "font-normal"}`}>
                         {label}
                       </span>
                       <ChevronRight
-                        size={16}
+                        size={15}
                         strokeWidth={1.5}
-                        style={{ opacity: active ? 1 : 0.3, color: active ? "#22D3EE" : "white" }}
+                        style={{ opacity: active ? 1 : 0.25, color: active ? "#22D3EE" : "white" }}
                       />
                     </Link>
                   </motion.div>
