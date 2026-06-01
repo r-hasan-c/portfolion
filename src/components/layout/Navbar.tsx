@@ -29,15 +29,16 @@ export default function Navbar() {
 
   useEffect(() => { setMenuOpen(false); }, [pathname]);
 
-  // Close menu when user scrolls or touch-scrolls
+  // Close menu the instant the user scrolls or swipes — capture phase so
+  // nothing in the tree can block it, and passive so scroll isn't delayed.
   useEffect(() => {
     if (!menuOpen) return;
     const close = () => setMenuOpen(false);
-    window.addEventListener("scroll",    close, { passive: true });
-    window.addEventListener("touchmove", close, { passive: true });
+    document.addEventListener("scroll",    close, { passive: true, capture: true });
+    document.addEventListener("touchmove", close, { passive: true, capture: true });
     return () => {
-      window.removeEventListener("scroll",    close);
-      window.removeEventListener("touchmove", close);
+      document.removeEventListener("scroll",    close, { capture: true });
+      document.removeEventListener("touchmove", close, { capture: true });
     };
   }, [menuOpen]);
 
@@ -107,23 +108,6 @@ export default function Navbar() {
           </button>
         </div>
       </header>
-
-      {/* Backdrop — full screen, closes menu on any touch or scroll */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            key="backdrop"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
-            className="fixed inset-0 z-30 md:hidden"
-            onTouchStart={() => setMenuOpen(false)}
-            onTouchMove={() => setMenuOpen(false)}
-            onClick={() => setMenuOpen(false)}
-          />
-        )}
-      </AnimatePresence>
 
       {/* Mobile drawer */}
       <AnimatePresence>
