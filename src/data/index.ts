@@ -307,10 +307,11 @@ export const PEOPLE: Person[] = [
   {
     id: "rifat",
     name: "Md. Rifat Ahmed",
-    role: "Co-author & Researcher",
-    affiliation: "Research Collaborator",
+    role: "Master's Student, AI & Machine Learning · Jan 2026–Jul 2027",
+    affiliation: "Adelaide University",
     category: "collaborator",
     url: "https://www.linkedin.com/in/rifatahmedri2/",
+    imageUrl: "/images/adelaide.png",
   },
   {
     id: "rezwan",
