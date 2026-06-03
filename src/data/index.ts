@@ -283,7 +283,7 @@ export const PEOPLE: Person[] = [
   {
     id: "shawmoon",
     name: "Md. Shawmoon Azad",
-    role: "Research Assistant",
+    role: "PhD Student",
     affiliation: "Cleveland State University",
     category: "collaborator",
     url: "https://scholar.google.com/citations?user=qiLaY-AAAAAJ&hl=en",
@@ -291,7 +291,7 @@ export const PEOPLE: Person[] = [
   {
     id: "shubha",
     name: "Syed Emad Uddin Shubha",
-    role: "Graduate Research Assistant",
+    role: "PhD Student",
     affiliation: "Louisiana State University",
     category: "collaborator",
     url: "https://scholar.google.com/citations?user=8EK8VJMAAAAJ&hl=en",
@@ -307,7 +307,7 @@ export const PEOPLE: Person[] = [
   {
     id: "rifat",
     name: "Md. Rifat Ahmed",
-    role: "Master's Student, AI & Machine Learning · Jan 2026–Jul 2027",
+    role: "Master's Student",
     affiliation: "Adelaide University",
     category: "collaborator",
     url: "https://www.linkedin.com/in/rifatahmedri2/",
