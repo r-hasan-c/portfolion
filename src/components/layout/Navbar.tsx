@@ -41,16 +41,14 @@ export default function Navbar() {
     // Any click/tap outside closes after a tiny delay
     // (delay avoids catching the button click that opened the menu)
     const timer = setTimeout(() => {
-      document.addEventListener("click",    close);
-      document.addEventListener("touchend", close, { passive: true });
+      document.addEventListener("click", close);
     }, 50);
 
     return () => {
       clearTimeout(timer);
       document.removeEventListener("scroll",    close, { capture: true });
       document.removeEventListener("touchmove", close, { capture: true });
-      document.removeEventListener("click",    close);
-      document.removeEventListener("touchend", close);
+      document.removeEventListener("click",     close);
     };
   }, [menuOpen]);
 
