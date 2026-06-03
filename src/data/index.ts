@@ -315,6 +315,7 @@ export const PEOPLE: Person[] = [
     role: "Teaching Assistant",
     affiliation: "North South University",
     category: "collaborator",
+    url: "https://www.linkedin.com/in/rafi-majid-4454621a8/",
     imageUrl: "/images/rafi.jpeg",
   },
   {
