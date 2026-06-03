@@ -283,6 +283,15 @@ export const PEOPLE: Person[] = [
 
   /* ── Co-authors & Collaborators ── */
   {
+    id: "raiyan",
+    name: "Raiyan Rahman",
+    role: "PhD Student",
+    affiliation: "NC State University",
+    category: "collaborator",
+    url: "https://scholar.google.com/citations?user=QrDmxHwAAAAJ&hl=en",
+    imageUrl: "/images/raiyan.jpeg",
+  },
+  {
     id: "shawmoon",
     name: "Md. Shawmoon Azad",
     role: "PhD Student",
@@ -301,13 +310,12 @@ export const PEOPLE: Person[] = [
     imageUrl: "/images/syed.jpeg",
   },
   {
-    id: "raiyan",
-    name: "Raiyan Rahman",
-    role: "PhD Student",
-    affiliation: "NC State University",
+    id: "rafi",
+    name: "Rafi Majid",
+    role: "Teaching Assistant",
+    affiliation: "North South University",
     category: "collaborator",
-    url: "https://scholar.google.com/citations?user=QrDmxHwAAAAJ&hl=en",
-    imageUrl: "/images/raiyan.jpeg",
+    imageUrl: "/images/rafi.jpeg",
   },
   {
     id: "rifat",
@@ -317,14 +325,6 @@ export const PEOPLE: Person[] = [
     category: "collaborator",
     url: "https://www.linkedin.com/in/rifatahmedri2/",
     imageUrl: "/images/rifat.jpeg",
-  },
-  {
-    id: "rafi",
-    name: "Rafi Majid",
-    role: "Teaching Assistant",
-    affiliation: "North South University",
-    category: "collaborator",
-    imageUrl: "/images/rafi.jpeg",
   },
   {
     id: "rezwan",

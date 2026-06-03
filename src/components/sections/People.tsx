@@ -24,9 +24,11 @@ const FALLBACK_COLORS = [
 function PersonCard({
   person,
   idx,
+  large = false,
 }: {
   person: (typeof PEOPLE)[0];
   idx: number;
+  large?: boolean;
 }) {
   const initials = person.name
     .split(" ")
@@ -45,7 +47,7 @@ function PersonCard({
       className="flex flex-col items-center text-center gap-2.5 group"
     >
       {/* Photo circle */}
-      <div className="relative w-[72px] h-[72px] rounded-full overflow-hidden border border-[var(--border)] transition-shadow duration-200 group-hover:shadow-md">
+      <div className={`relative rounded-full overflow-hidden border border-[var(--border)] transition-shadow duration-200 group-hover:shadow-md ${large ? "w-[104px] h-[104px]" : "w-[72px] h-[72px]"}`}>
         {person.imageUrl ? (
           <Image
             src={person.imageUrl}
@@ -101,7 +103,7 @@ export default function People() {
           {/* Mobile: 1 per row  |  Desktop: 3 per row */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {supervisors.map((p, i) => (
-              <PersonCard key={p.id} person={p} idx={i} />
+              <PersonCard key={p.id} person={p} idx={i} large />
             ))}
           </div>
         </div>
