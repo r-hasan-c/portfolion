@@ -253,13 +253,14 @@ export const EDUCATION: Education[] = [
 ];
 
 export const PEOPLE: Person[] = [
+  /* ── Supervisors & Mentors ── */
   {
     id: "blakely",
     name: "Dr. Jonathan Blakely",
     role: "PhD Supervisor",
     affiliation: "University of Alabama in Huntsville",
     category: "supervisor",
-    url: "https://www.uah.edu/eng/departments/ece/faculty-staff/jonathan-blakely",
+    url: "https://www.linkedin.com/in/jonathan-blakely-8b65395/",
   },
   {
     id: "mahdy",
@@ -267,7 +268,7 @@ export const PEOPLE: Person[] = [
     role: "Undergraduate Thesis Supervisor",
     affiliation: "North South University",
     category: "supervisor",
-    url: "https://sites.google.com/view/nsuopticslab/home",
+    url: "https://www.linkedin.com/in/mahdy-rahman-a3b7799b/",
   },
   {
     id: "tanvir",
@@ -275,23 +276,17 @@ export const PEOPLE: Person[] = [
     role: "Chief Value Officer",
     affiliation: "Innovative Technology & Engineering",
     category: "supervisor",
-    url: "mailto:tanvir@itebd.com",
+    imageUrl: "/images/tanvir.jpeg",
   },
+
+  /* ── Co-authors & Collaborators ── */
   {
     id: "shawmoon",
     name: "Shawmoon Azad",
     role: "Co-author & Researcher",
     affiliation: "Research Collaborator",
     category: "collaborator",
-    url: "https://shawmoonazad.github.io/",
-  },
-  {
-    id: "raiyan",
-    name: "Raiyan Rahman",
-    role: "Co-author & Researcher",
-    affiliation: "Research Collaborator",
-    category: "collaborator",
-    url: "https://www.raiyan.net/",
+    url: "https://www.linkedin.com/in/shawmoonazad/",
   },
   {
     id: "shubha",
@@ -299,7 +294,15 @@ export const PEOPLE: Person[] = [
     role: "Co-author & Researcher",
     affiliation: "Research Collaborator",
     category: "collaborator",
-    url: "https://syedshubha.github.io/",
+    url: "https://www.linkedin.com/in/syedshubha/",
+  },
+  {
+    id: "raiyan",
+    name: "Raiyan Rahman",
+    role: "Co-author & Researcher",
+    affiliation: "Research Collaborator",
+    category: "collaborator",
+    url: "https://www.linkedin.com/in/raiyan78/",
   },
   {
     id: "rifat",
@@ -311,9 +314,9 @@ export const PEOPLE: Person[] = [
   },
   {
     id: "rezwan",
-    name: "Rezwan-Ul-Alam",
-    role: "Co-author & Researcher",
-    affiliation: "Research Collaborator",
+    name: "Rezwan Ul Alam",
+    role: "Masters Student",
+    affiliation: "La Trobe University",
     category: "collaborator",
     url: "https://www.linkedin.com/in/rezwan-ul-alam-50b719243/",
   },
