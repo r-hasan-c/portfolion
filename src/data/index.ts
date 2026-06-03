@@ -316,7 +316,7 @@ export const PEOPLE: Person[] = [
   {
     id: "rezwan",
     name: "Rezwan Ul Alam",
-    role: "Masters Student",
+    role: "Master's Student",
     affiliation: "La Trobe University",
     category: "collaborator",
     url: "https://www.linkedin.com/in/rezwan-ul-alam-50b719243/",

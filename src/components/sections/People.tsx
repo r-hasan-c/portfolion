@@ -110,16 +110,12 @@ export default function People() {
           <p className="text-xs font-medium uppercase tracking-widest text-[var(--fg-faint)] mb-7">
             Co-authors & Collaborators
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+          <div className="grid grid-cols-3 gap-8 justify-items-center">
             {collaborators.map((p, i) => (
               <PersonCard key={p.id} person={p} idx={i + supervisors.length} />
             ))}
           </div>
         </div>
-
-        <p className="mt-8 text-xs text-[var(--fg-faint)]">
-          Photos coming soon — drop images in <code className="font-mono text-[0.7rem] bg-[var(--bg-alt)] px-1 rounded">/public/people/</code>.
-        </p>
       </div>
     </section>
   );
