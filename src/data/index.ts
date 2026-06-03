@@ -267,7 +267,7 @@ export const PEOPLE: Person[] = [
     id: "mahdy",
     name: "Dr. Mahdy Rahman Chowdhury",
     role: "Undergraduate Thesis Supervisor",
-    affiliation: "Assistant Professor, North South University",
+    affiliation: "Professor, North South University",
     category: "supervisor",
     url: "https://scholar.google.com/citations?user=PxNOguMAAAAJ&hl=en",
     imageUrl: "/images/mahdy.jpeg",
