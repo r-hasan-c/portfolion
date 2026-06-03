@@ -313,7 +313,7 @@ export const PEOPLE: Person[] = [
   {
     id: "rafi",
     name: "Rafi Majid",
-    role: "Teaching Assistant",
+    role: "Graduate Teaching Assistant",
     affiliation: "North South University",
     category: "collaborator",
     url: "https://www.linkedin.com/in/rafi-majid-4454621a8/",
