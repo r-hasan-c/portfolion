@@ -8,7 +8,7 @@ import { PROJECTS } from "@/data";
 import type { Project } from "@/types";
 
 const CAT_LABELS: Record<Project["category"] | "all", string> = {
-  all: "all", ai: "ai", quantum: "quantum", research: "research", software: "software",
+  all: "All", ai: "AI", quantum: "Quantum", research: "Research", software: "Software",
 };
 
 function ProjectRow({ project, index }: { project: Project; index: number }) {
@@ -23,10 +23,10 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
     >
       {/* Category badge — left column */}
       <div className="sm:w-20 flex-shrink-0 sm:text-right pt-0.5">
-        <span className="tag tag-muted">{project.category}</span>
+        <span className="tag tag-muted">{CAT_LABELS[project.category]}</span>
         {project.featured && (
           <div className="mt-1">
-            <span className="tag">featured</span>
+            <span className="tag">Featured</span>
           </div>
         )}
       </div>
