@@ -307,6 +307,7 @@ export const PEOPLE: Person[] = [
     affiliation: "NC State University",
     category: "collaborator",
     url: "https://scholar.google.com/citations?user=QrDmxHwAAAAJ&hl=en",
+    imageUrl: "/images/raiyan.jpeg",
   },
   {
     id: "rifat",
