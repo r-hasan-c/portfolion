@@ -72,12 +72,12 @@ function PubRow({ pub, index }: { pub: Publication; index: number }) {
         <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
           {pub.paperUrl && (
             <a href={pub.paperUrl} target="_blank" rel="noopener noreferrer" className="font-medium">
-              paper
+              Paper
             </a>
           )}
           {pub.citeUrl && (
             <a href={pub.citeUrl} className="text-[var(--fg-muted)] hover:text-[var(--fg)]">
-              bib
+              Cite
             </a>
           )}
           {pub.abstract && (
@@ -85,7 +85,7 @@ function PubRow({ pub, index }: { pub: Publication; index: number }) {
               onClick={() => setOpen(v => !v)}
               className="text-[var(--fg-faint)] hover:text-[var(--fg)] text-sm transition-colors"
             >
-              {open ? "▲ abstract" : "▼ abstract"}
+              {open ? "▲ Abstract" : "▼ Abstract"}
             </button>
           )}
         </div>
@@ -133,7 +133,7 @@ export default function Publications() {
                   : "border-[var(--border)] text-[var(--fg-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] hover:bg-[var(--accent-pale)]"
               }`}
             >
-              {f === "all" ? "all" : TYPE_LABEL[f as Publication["type"]].toLowerCase()}
+              {f === "all" ? "All" : TYPE_LABEL[f as Publication["type"]]}
             </button>
           ))}
         </div>

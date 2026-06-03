@@ -116,7 +116,7 @@ export default function Navbar() {
             className="md:hidden text-xs font-medium tracking-wide text-[#E2E8F0] hover:text-[#22D3EE] transition-colors px-2 py-1.5 rounded border border-[#E2E8F0]/20 hover:border-[#22D3EE]"
             aria-label="Toggle menu"
           >
-            {menuOpen ? "close" : "menu"}
+            {menuOpen ? "Close" : "Explore"}
           </button>
         </div>
       </header>

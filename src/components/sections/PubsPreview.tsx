@@ -31,7 +31,7 @@ export default function PubsPreview() {
             className="text-xs text-[var(--fg-faint)] hover:text-[var(--accent)] transition-colors"
             style={{ textDecoration: "none" }}
           >
-            all publications →
+            All Publications →
           </Link>
         </div>
 
@@ -55,7 +55,7 @@ export default function PubsPreview() {
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap gap-1.5 mb-1.5">
                   <span className={`tag ${STATUS_CLS[pub.status]}`}>
-                    {pub.status === "under-review" ? "under review" : pub.status}
+                    {pub.status === "under-review" ? "Under Review" : pub.status.charAt(0).toUpperCase() + pub.status.slice(1)}
                   </span>
                   {pub.tags.slice(0, 2).map(t => (
                     <span key={t} className="tag">{t}</span>
@@ -75,7 +75,7 @@ export default function PubsPreview() {
             href="/publications"
             className="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-h)] transition-colors"
           >
-            View all {PUBLICATIONS.length} publications →
+            View All {PUBLICATIONS.length} Publications →
           </Link>
         </div>
       </div>

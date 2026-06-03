@@ -20,7 +20,7 @@ export default function ResearchTeaser() {
             className="text-xs text-[var(--fg-faint)] hover:text-[var(--accent)] transition-colors"
             style={{ textDecoration: "none" }}
           >
-            all interests →
+            All Interests →
           </Link>
         </div>
 

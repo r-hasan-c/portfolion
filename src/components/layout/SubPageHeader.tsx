@@ -25,7 +25,7 @@ export default function SubPageHeader({ title, description }: Props) {
             style={{ textDecoration: "none" }}
           >
             <ArrowLeft size={12} strokeWidth={2} />
-            home
+            Home
           </Link>
         </motion.div>
 

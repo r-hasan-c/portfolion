@@ -55,7 +55,7 @@ export default function Education() {
                     edu.status === "current"  ? "tag-green" :
                     edu.status === "upcoming" ? ""          : "tag-muted"
                   }`}>
-                    {edu.status}
+                    {edu.status.charAt(0).toUpperCase() + edu.status.slice(1)}
                   </span>
                 </div>
                 <p className="text-sm text-[var(--fg-muted)] mb-0.5">
