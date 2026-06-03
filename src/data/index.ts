@@ -287,7 +287,7 @@ export const PEOPLE: Person[] = [
     id: "raiyan",
     name: "Raiyan Rahman",
     role: "PhD Student",
-    affiliation: "North Carolina State University",
+    affiliation: "NC State University",
     category: "collaborator",
     url: "https://scholar.google.com/citations?user=QrDmxHwAAAAJ&hl=en",
     imageUrl: "/images/raiyan.jpeg",
