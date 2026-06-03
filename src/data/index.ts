@@ -261,6 +261,7 @@ export const PEOPLE: Person[] = [
     affiliation: "University of Alabama in Huntsville",
     category: "supervisor",
     url: "https://scholar.google.com/citations?user=IDS4oKYAAAAJ&hl=en",
+    imageUrl: "/images/jonathan.jpeg",
   },
   {
     id: "mahdy",
@@ -269,6 +270,7 @@ export const PEOPLE: Person[] = [
     affiliation: "North South University",
     category: "supervisor",
     url: "https://scholar.google.com/citations?user=PxNOguMAAAAJ&hl=en",
+    imageUrl: "/images/mahdy.jpeg",
   },
   {
     id: "tanvir",
@@ -287,6 +289,7 @@ export const PEOPLE: Person[] = [
     affiliation: "Cleveland State University",
     category: "collaborator",
     url: "https://scholar.google.com/citations?user=qiLaY-AAAAAJ&hl=en",
+    imageUrl: "/images/shawmoon.jpeg",
   },
   {
     id: "shubha",
@@ -295,6 +298,7 @@ export const PEOPLE: Person[] = [
     affiliation: "Louisiana State University",
     category: "collaborator",
     url: "https://scholar.google.com/citations?user=8EK8VJMAAAAJ&hl=en",
+    imageUrl: "/images/syed.jpeg",
   },
   {
     id: "raiyan",
@@ -311,7 +315,7 @@ export const PEOPLE: Person[] = [
     affiliation: "Adelaide University",
     category: "collaborator",
     url: "https://www.linkedin.com/in/rifatahmedri2/",
-    imageUrl: "/images/adelaide.png",
+    imageUrl: "/images/rifat.jpeg",
   },
   {
     id: "rezwan",
@@ -320,6 +324,7 @@ export const PEOPLE: Person[] = [
     affiliation: "La Trobe University",
     category: "collaborator",
     url: "https://www.linkedin.com/in/rezwan-ul-alam-50b719243/",
+    imageUrl: "/images/rezwan.jpeg",
   },
 ];
 
