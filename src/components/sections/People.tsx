@@ -110,9 +110,16 @@ export default function People() {
           <p className="text-xs font-medium uppercase tracking-widest text-[var(--fg-faint)] mb-7">
             Co-authors & Collaborators
           </p>
-          <div className="grid grid-cols-3 gap-8 justify-items-center">
-            {collaborators.map((p, i) => (
+          {/* Row 1 — first 3 */}
+          <div className="grid grid-cols-3 gap-8 mb-8">
+            {collaborators.slice(0, 3).map((p, i) => (
               <PersonCard key={p.id} person={p} idx={i + supervisors.length} />
+            ))}
+          </div>
+          {/* Row 2 — last 2 centred */}
+          <div className="flex justify-center gap-16">
+            {collaborators.slice(3).map((p, i) => (
+              <PersonCard key={p.id} person={p} idx={i + supervisors.length + 3} />
             ))}
           </div>
         </div>
