@@ -278,6 +278,7 @@ export const PEOPLE: Person[] = [
     role: "Chief Value Officer",
     affiliation: "Innovative Technology & Engineering",
     category: "supervisor",
+        url: "https://WWW.itebd.com",
     imageUrl: "/images/tanvir.jpeg",
   },
 
