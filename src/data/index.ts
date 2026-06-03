@@ -302,7 +302,7 @@ export const PEOPLE: Person[] = [
   },
   {
     id: "shubha",
-    name: "Syed Emad Uddin Shubha",
+    name: "Syed Emad Uddin",
     role: "PhD Student",
     affiliation: "Louisiana State University",
     category: "collaborator",
