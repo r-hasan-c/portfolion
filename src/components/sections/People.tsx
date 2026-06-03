@@ -117,7 +117,7 @@ export default function People() {
             ))}
           </div>
           {/* Row 2 — last 2 centred */}
-          <div className="flex justify-center gap-16">
+          <div className="flex justify-center gap-32">
             {collaborators.slice(3).map((p, i) => (
               <PersonCard key={p.id} person={p} idx={i + supervisors.length + 3} />
             ))}
