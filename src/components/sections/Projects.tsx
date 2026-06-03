@@ -53,7 +53,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
               className="no-hl flex items-center gap-1.5 text-[var(--fg-muted)] hover:text-[var(--accent)] transition-colors"
               style={{ textDecoration: "none" }}
             >
-              <GithubIcon className="w-3.5 h-3.5" /> code
+              <GithubIcon className="w-3.5 h-3.5" /> Code
             </a>
           )}
           {project.liveUrl && (
@@ -64,7 +64,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
               className="no-hl flex items-center gap-1.5 text-[var(--fg-muted)] hover:text-[var(--accent)] transition-colors"
               style={{ textDecoration: "none" }}
             >
-              <ExternalLink size={13} strokeWidth={1.5} /> demo
+              <ExternalLink size={13} strokeWidth={1.5} /> Demo
             </a>
           )}
         </div>
@@ -93,7 +93,7 @@ export default function Projects() {
                   : "border-[var(--border)] text-[var(--fg-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] hover:bg-[var(--accent-pale)]"
               }`}
             >
-              {c}
+              {CAT_LABELS[c]}
             </button>
           ))}
         </div>
