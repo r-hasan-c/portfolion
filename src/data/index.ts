@@ -319,6 +319,14 @@ export const PEOPLE: Person[] = [
     imageUrl: "/images/rifat.jpeg",
   },
   {
+    id: "rafi",
+    name: "Rafi Majid",
+    role: "Teaching Assistant",
+    affiliation: "North South University",
+    category: "collaborator",
+    imageUrl: "/images/rafi.jpeg",
+  },
+  {
     id: "rezwan",
     name: "Rezwan Ul Alam",
     role: "Master's Student",
